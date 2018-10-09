@@ -33,31 +33,64 @@ let gifts = [
 let verse1 = "<br> On the ";
 let verse2 = " day of Christmas, my true love gave to me: <br>"
 
+/*============================================ LONGER CODE. WITH COMMA AND PERIOD ============================================*/
+
 // OUTER LOOP
+// for (let counter = 0; counter < day.length ; counter++) {
+// 	let text = verse1 + day[counter] + verse2; // ON THE ___ DAY OF CHRISTMAS MY TRUE LOVE GAVE TO ME
+
+// 	// DISPLAY FIRST SET
+// 	if (counter == 0) {
+// 		document.getElementById('output').innerHTML += text + gifts[counter] + '. ' +  '<br>';
+// 	}
+
+// 	// ALL OTHER SETS
+// 	 if (counter > 0) {
+// 		// DISPLAY FIRST TWO LINES FOR ALL OTHER SETS
+// 		document.getElementById('output').innerHTML += text + gifts[counter] +  ', ' +  '<br>';
+
+// 		// NESTED LOOP TO SHOW SUCCEEDING LINES (i.e., PREVIOUS GIFTS IN REVERSE ORDER)
+// 		for (let counter2 = counter; counter2 > 0; counter2--) {
+
+// 			let text2 = ''; // VARIABLE OR CONTAINER OF LOOP FOR PREVIOUS GIFTS
+
+// 			if (counter2 == 1) {
+// 				text2 = ' and ' + gifts[counter2 - 1] + '. ' + '<br>'; // SPECIFICALLY FOR LAST LINE FOR ALL SETS: AND A PARTRIDGE IN A PEAR TREE
+// 			} 
+
+// 			else {
+// 				text2 = gifts[counter2 - 1] + ', ' + '<br>'; // ALL OTHER PREVIOUS GIFTS
+// 			}
+
+// 			document.getElementById('output').innerHTML += text2; // DISPLAY  ALL PREVIOUS GIFTS
+
+// 		}
+
+// 	}
+	
+// }
+
+
+/*============================================ SHORTER CODE ============================================*/
+
+
 for (let counter = 0; counter < day.length ; counter++) {
-	let text = verse1 + day[counter] + verse2;
+	let text = verse1 + day[counter] + verse2; // ON THE ___ DAY OF CHRISTMAS MY TRUE LOVE GAVE TO ME
 
-	// DISPLAY FIRST SET
-	if (counter == 0) {
-		document.getElementById('output').innerHTML += text + gifts[counter] + '. ' +  '<br>';
-	}
-
-	// ALL OTHER SETS
-	 if (counter > 0) {
-		// DISPLAY FIRST TWO LINES FOR ALL OTHER SETS
-		document.getElementById('output').innerHTML += text + gifts[counter] +  '. ' +  '<br>';
-
-		// NESTED LOOP TO SHOW SUCCEEDING LINES (i.e., PREVIOUS GIFTS IN REVERSE ORDER)
+	document.getElementById('output').innerHTML += text + gifts[counter] +  '<br>'; // DISPLAY FIRST SET
+	
+	if (counter > 0) {
+		
 		for (let counter2 = counter; counter2 > 0; counter2--) {
 
 			let text2 = ''; // VARIABLE OR CONTAINER OF LOOP FOR PREVIOUS GIFTS
 
 			if (counter2 == 1) {
-				text2 = ' and ' + gifts[counter2 - 1] + '. ' + '<br>'; // SPECIFICALLY FOR LAST LINE FOR ALL SETS: AND A PARTRIDGE IN A PEAR TREE
+				text2 = ' and ' + gifts[counter2 - 1] + '<br>'; // SPECIFICALLY FOR LAST LINE FOR ALL SETS: AND A PARTRIDGE IN A PEAR TREE
 			} 
 
 			else {
-				text2 = gifts[counter2 - 1] + ', ' + '<br>'; // ALL OTHER PREVIOUS GIFTS
+				text2 = gifts[counter2 - 1] + '<br>'; // ALL OTHER PREVIOUS GIFTS
 			}
 
 			document.getElementById('output').innerHTML += text2; // DISPLAY  ALL PREVIOUS GIFTS
@@ -67,7 +100,6 @@ for (let counter = 0; counter < day.length ; counter++) {
 	}
 	
 }
-
 
 
 // DECLARE the array 
