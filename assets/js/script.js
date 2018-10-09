@@ -1,3 +1,75 @@
+// EXERCISE
+
+let day = [
+	"1st", 
+	"2nd", 
+	"3rd", 
+	"4th", 
+	"5th", 
+	"6th", 
+	"7th", 
+	"8th", 
+	"9th", 
+	"10th", 
+	"11th", 
+	"12th"
+	];
+
+let gifts = [
+	"a partridge in a pear tree", 
+	"2 turtle doves", 
+	"3 french hens", 
+	"4 calling birds", 
+	"5 golden rings", 
+	"6 geese a laying", 
+	"7 swans a swimming", 
+	"8 maids a milking", 
+	"9 ladies dancing", 
+	"10 lords a leaping", 
+	"11 pipers piping", 
+	"12 drummers drumming"
+	];
+
+let verse1 = "<br> On the ";
+let verse2 = " day of Christmas, my true love gave to me: <br>"
+
+// OUTER LOOP
+for (let counter = 0; counter < day.length ; counter++) {
+	let text = verse1 + day[counter] + verse2;
+
+	// DISPLAY FIRST SET
+	if (counter == 0) {
+		document.getElementById('output').innerHTML += text + gifts[counter] + '. ' +  '<br>';
+	}
+
+	// ALL OTHER SETS
+	 if (counter > 0) {
+		// DISPLAY FIRST TWO LINES FOR ALL OTHER SETS
+		document.getElementById('output').innerHTML += text + gifts[counter] +  '. ' +  '<br>';
+
+		// NESTED LOOP TO SHOW SUCCEEDING LINES (i.e., PREVIOUS GIFTS IN REVERSE ORDER)
+		for (let counter2 = counter; counter2 > 0; counter2--) {
+
+			let text2 = ''; // VARIABLE OR CONTAINER OF LOOP FOR PREVIOUS GIFTS
+
+			if (counter2 == 1) {
+				text2 = ' and ' + gifts[counter2 - 1] + '. ' + '<br>'; // SPECIFICALLY FOR LAST LINE FOR ALL SETS: AND A PARTRIDGE IN A PEAR TREE
+			} 
+
+			else {
+				text2 = gifts[counter2 - 1] + ', ' + '<br>'; // ALL OTHER PREVIOUS GIFTS
+			}
+
+			document.getElementById('output').innerHTML += text2; // DISPLAY  ALL PREVIOUS GIFTS
+
+		}
+
+	}
+	
+}
+
+
+
 // DECLARE the array 
 // let numArray = [1, 2, 3, 4, 5];
 
@@ -64,16 +136,3 @@
 // for (num = 0; num < fruits.length; num++) { // num = 0 because we want all index to display, 
 // 	console.log(fruits[num]); 
 // }
-
-
-// EXERCISE
-
-let day = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"]
-let gifts = ["a partridge in a pear tree", "2 turtle doves", "3 french hens", "4 calling birds", "5 golden rings", "6 geese a laying", "7 swans a swimming", "8 maids a milking", "9 ladies dancing", "10 lords a leaping", "11 pipers piping", "12 drummers drumming"];
-
-for (num = 0; num < gifts.length; num++){
-	
-}
-
-
-display.getElementById('output').innerHTML = "On the" += "day[num]" += "of Christmas, my true love sent to me" += "gifts[num]"; 
